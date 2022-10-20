@@ -16,7 +16,6 @@ function App() {
 
   setInterval(() => {
     clearCacheData()
-    console.log("cache cleared")
   }, 300000);
 
   return <Switch>
