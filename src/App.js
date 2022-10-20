@@ -5,6 +5,20 @@ import Home from './Home'
 import Movie from './SingleMovie'
 
 function App() {
+  // Function to clear complete cache data
+  const clearCacheData = () => {
+    caches.keys().then((names) => {
+      names.forEach((name) => {
+        caches.delete(name);
+      });
+    });
+  };
+
+  setInterval(() => {
+    clearCacheData()
+    console.log("cache cleared")
+  }, 300000);
+
   return <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/movie/:id" component={Movie} />
